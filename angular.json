@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mega-films-roll:build:production"
+              "buildTarget": "mega-films-roll:build:production"
             },
             "development": {
-              "browserTarget": "mega-films-roll:build:development"
+              "buildTarget": "mega-films-roll:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mega-films-roll:build"
+            "buildTarget": "mega-films-roll:build"
           }
         },
         "test": {
