@@ -8,12 +8,12 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router, private auth: AuthService) { }
-  ngOnInit(): void { }
+  constructor(private router: Router, private auth: AuthService) {}
+  ngOnInit(): void {}
   goToHome() {
-    this.router.navigate(['home'])
-   }
-   logout(){
-    this.auth.logout()
+    this.router.navigate(['home']);
+  }
+  logout() {
+    this.auth.logout();
   }
 }
