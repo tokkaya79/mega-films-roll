@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,10 +16,14 @@ export class HomeComponent implements OnInit {
   getTrendingMovies() {
     this.http
       .get('http://localhost:4200/assets/data/trending-movies.json')
-      .subscribe((movies) => {
+      .subscribe((movies:any) => {
         this.trendingMovies = movies;
         console.log(this.trendingMovies);
       });
 
   }
+  rating = 3.14;
+  ariaValueText(current: number, max: number) {
+		return `${current} out of ${max} hearts`;
+	}
 }
