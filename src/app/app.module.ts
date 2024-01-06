@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { MovieComponent } from './movie/movie.component';
-
+import { FeatureModule } from './feature/feature.module';
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import { MovieComponent } from './movie/movie.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbRatingModule
+    NgbRatingModule,
+    FeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,21 +9,43 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   trendingMovies: any;
-  constructor(private http: HttpClient) {}
+  theatreMovies: any;
+  popularMovies: any;
+  constructor(private http: HttpClient, private router: Router) {}
   ngOnInit(): void {
     this.getTrendingMovies();
+    this.getTheatreMovies();
+    this.getPopularMovies();
   }
   getTrendingMovies() {
     this.http
       .get('http://localhost:4200/assets/data/trending-movies.json')
-      .subscribe((movies:any) => {
+      .subscribe((movies: any) => {
         this.trendingMovies = movies;
         console.log(this.trendingMovies);
       });
+  }
+  getTheatreMovies() {
+    this.http
+      .get('http://localhost:4200/assets/data/theatre-movies.json')
+      .subscribe((movies: any) => {
+        this.theatreMovies = movies;
+      });
+  }
+  getPopularMovies() {
+    this.http
+      .get('http://localhost:4200/assets/data/popular-movies.json')
+      .subscribe((movies: any) => {
+        this.popularMovies = movies;
+      });
+  }
+  goToMovie(type:string, id: string){
+    this.router.navigate(['movie', type, id])
 
   }
+
   rating = 3.14;
   ariaValueText(current: number, max: number) {
-		return `${current} out of ${max} hearts`;
-	}
+    return `${current} out of ${max} hearts`;
+  }
 }
