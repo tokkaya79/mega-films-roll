@@ -15,7 +15,7 @@ export class MovieComponent implements OnInit {
   movie: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
-  ngOnInit(): void {
+ ngOnInit(): void {
     this.type = this.route.snapshot.params['type'];
     this.id = this.route.snapshot.params['id'];
     if (this.type === 'trending') {
@@ -33,10 +33,10 @@ export class MovieComponent implements OnInit {
     this.http.get(this.url).subscribe((movies) => {
       this.movies = movies;
       let index = this.movies.findIndex(
-        (movie: { id: String }) => movie.id == this.id
+        (movie: { id: string }) => movie.id == this.id
       );
-      if (index >  -1) {
-        this.movie = this.movies[index]
+      if (index > -1) {
+        this.movie = this.movies[index];
       }
     });
   }
