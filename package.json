@@ -1,12 +1,15 @@
 {
   "name": "mega-films-roll",
+  "homepage": "https://tokkaya79.github.io/mega-films-roll/",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "predeploy": "ng build --base-href=/mega-films-roll/",
+    "deploy": "npx gh-pages -d docs"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +33,7 @@
     "@angular/cli": "~17.0.9",
     "@angular/compiler-cli": "^17.0.8",
     "@types/jasmine": "~4.3.0",
+    "gh-pages": "^6.1.1",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
