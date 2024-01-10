@@ -1,87 +1,88 @@
-.movie-container{
-  width: 1100px;
+.movie-container {
+  max-width: 1100px;
   margin: 0 auto;
-  .top{
+  .top {
     display: flex;
-    .left{
-      width: 400px;
-      .name{
+    .left {
+      max-width: 40%;
+      .name {
         font-size: 36px;
         font-weight: bold;
       }
-      .rating{
+      .rating {
         display: flex;
         justify-items: center;
         margin-bottom: 15px;
-        .rating-value{
+        .rating-value {
           font-weight: bold;
           margin-left: 20px;
           padding-top: 11px;
         }
       }
-      .cover{
+      .cover {
         width: 350px;
         height: 400px;
         margin-right: 50px;
-        img{
+        img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
     }
-    .right{
-      width: 700px;
-      .title{
+    .right {
+      width: 60%;
+      .title {
         margin-bottom: 30px;
       }
-      .rating-form{
-        .form-group{
+      .rating-form {
+        .form-group {
           margin-top: 20px;
         }
-        label{
+        label {
           font-weight: bold;
           margin-bottom: 5px;
         }
-        textarea{
+        textarea {
           resize: none;
         }
       }
-      .btn-container{
+      .btn-container {
         margin-top: 30px;
       }
     }
   }
-  .bottom{
+  .bottom {
     margin-top: 50px;
-    .title{
+    padding: 10px;
+    .title {
       margin-bottom: 30px;
     }
-    .reviews{
+    .reviews {
       width: 800px;
-      .review{
+      .review {
         margin-bottom: 25px;
         background-color: #f1f1f1;
         padding: 20px;
         border-radius: 5px;
-        .review-details{
+        .review-details {
           display: flex;
           justify-content: space-between;
           margin-bottom: 20px;
-          .review-left{
-            .author{
+          .review-left {
+            .author {
               font-size: 18px;
               font-weight: bold;
             }
-            .author_dt{
+            .author_dt {
               opacity: 0.7;
             }
           }
-          .review-right{
-            .rating{
+          .review-right {
+            .rating {
               display: flex;
               align-items: center;
-              .rating-value{
+              .rating-value {
                 margin-left: 20px;
                 font-weight: bold;
               }
@@ -91,5 +92,83 @@
       }
     }
   }
+}
 
+@media (max-width: 1075px) {
+  .movie-container {
+    max-width: 900px;
+    .top {
+      justify-content: space-between;
+      padding: 20px 0;
+      .left{
+        .rating{
+          .rating-value{
+            padding: 0;
+          }
+        }
+      }
+    }
+    .form-control {
+      width: 500px;
+    }
+  }
+}
+@media (max-width: 930px) {
+  .movie-container {
+    width: 700px;
+    .form-control {
+      width: 300px;
+    }
+    .bottom {
+      width: 100%;
+      .reviews {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 730px) {
+  .movie-container {
+    .top {
+      justify-content: space-around;
+      padding: 10px 0;
+      .left {
+        .name {
+          font-size: 24px;
+        }
+        .cover {
+          width: 280px;
+          height: auto;
+          margin-right: 10px;
+        }
+      }
+    }
+    .form-control {
+      width: 300px;
+    }
+  }
+}
+@media (max-width: 680px) {
+  .movie-container {
+    width: 100%;
+    .form-control {
+      width: 250px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .movie-container {
+    .top {
+      display: block;
+      padding: 20px;
+      .right {
+        width: 100%;
+      }
+    }
+    .form-control {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 510px) {
 }
