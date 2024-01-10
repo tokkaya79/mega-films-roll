@@ -5,6 +5,7 @@
     display: flex;
     .left {
       max-width: 40%;
+      margin-right: 20px;
       .name {
         font-size: 36px;
         font-weight: bold;
@@ -115,9 +116,13 @@
 }
 @media (max-width: 930px) {
   .movie-container {
-    width: 700px;
     .form-control {
       width: 300px;
+    }
+    .top{
+      .right{
+        width: 45%;
+      }
     }
     .bottom {
       width: 100%;
